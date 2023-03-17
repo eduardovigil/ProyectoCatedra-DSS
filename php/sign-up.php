@@ -11,13 +11,17 @@ if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['fechana
     $password = $_POST["password"];
     $dui = $_POST["dui"];
     $fechaNac = date('Y-m-d',strtotime(($_POST['fechanac'])));
-    
+    $validar= "SELECT * FROM usuarios WHERE email = '$email'";
     if(preg_match($regexNombre,$nombre)){
         var_dump(preg_match($regexNombre,$nombre));
         if(preg_match($regexApell,$apellido)){
             if(preg_match($regexDui,$dui)){
                 if(preg_match($regexEmail,$email)){
                     if(preg_match($regexPass,$password)){
+                        if(mysqli_query($conn, $validar)){
+                            echo '<script type="text/javascript">alert(Correo ya existente");</script>';
+                            header('Location: ../view/registros.php');
+                        }else{
                             // Encriptar la contraseña
                             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
                             // Insertar los datos en la base de datos
@@ -29,25 +33,26 @@ if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['fechana
                             }
                             // Cerrar la conexión a la base de datos
                             mysqli_close($conn);
+                        }
                     }else{
-                        echo "Debe contener 2 Letras. Mayusculas 2 letras minusculas, 2 Números y 2 Simbolos.";
-                        header('Location: ../view/registros.html');
+                        echo '<script type="text/javascript">alert("Debe contener 2 Letras. Mayusculas 2 letras minusculas, 2 Números y 2 Simbolos.");</script>';
+                        header('Location: ../view/registros.php');
                     }
                 }else{
-                    echo "Email solo puede llevar su correo y formato ejemplo@gmail.com.";
-                    header('Location: ../view/registros.html');
+                    echo '<script type="text/javascript">alert("Email solo puede llevar su correo y formato ejemplo@gmail.com.");</script>';
+                    header('Location: ../view/registros.php');
                 }
             }else{
-                echo "Dui solo puede llevar numeros de 0 al 9.";
-                header('Location: ../view/registros.html');
+                echo '<script type="text/javascript">alert("Dui solo puede llevar numeros de 0 al 9.");</script>';
+                header('Location: ../view/registros.php');
             }
         }else{
-            echo "Apellidos solo pueden usar Letras y espacios.";
-            header('Location: ../view/registros.html');
+            echo '<script type="text/javascript">alert("Apellidos solo pueden usar Letras y espacios.");</script>';
+            header('Location: ../view/registros.php');
         }
     }else{
-        echo '<div class="error">Nombres solo pueden usar Letras y espacios.</div>';
-        header('Location: ../view/registros.html');
+        echo '<script type="text/javascript">alert("Nombres solo pueden usar Letras y espacios.");</script>';
+        header('Location: ../view/registros.php');
 
     }
 }
