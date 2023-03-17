@@ -13,7 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $result = $stmt->get_result();
     $user = $result->fetch_assoc();
     $pass =$_POST['password'];
-    var_dump($user);
     // Verificar si el usuario existe y si la contraseña es correcta
     if ($user && password_verify($pass, $user['password'])) {
         // Iniciar sesión y redirigir al usuario a la página de inicio
@@ -23,8 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     } else {
         // Mostrar un mensaje de error
-        $error = 'Usuario o contraseña incorrectos';
-        echo "<script>alert('Error Las contraseñas son diferentes')</script>";
+        echo "<script>alert('Error los datos son distintos')</script>";
+        header('Location: ../view/iniciosesion.html');
+        
     }
 
     // Cerrar la conexión a la base de datos
