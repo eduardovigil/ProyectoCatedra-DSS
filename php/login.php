@@ -18,12 +18,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Iniciar sesión y redirigir al usuario a la página de inicio
         $_SESSION['usuario'] = $user; 
         
-        header('Location: ../view/dashboard.php');
+        header('Location: ../html/dashboard.php');
         exit();
     } else {
         // Mostrar un mensaje de error
         echo "<script>alert('Error los datos son distintos')</script>";
-        header('Location: ../view/iniciosesion.html');
+        header('Location: ../html/login.html');
         
     }
 
