@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Banco de Agricultura Salvadoreño</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+<script>
+      $(document).ready(function(){
+        $("#register").click(function(){
+          $("#login").css("background-color", "#ecf0f1");
+          $("#login > span").css("color", "#333");
+          $("#register").css("background-color", "#e74c3c");
+          $("#register > span").css("color", "white");
+          $("#l-f").toggle(500);
+          $("#r-f").toggle(1000);
+        })
+        $("#login").click(function(){
+          $("#register").css("background-color", "#ecf0f1");
+          $("#register > span").css("color", "#333");
+          $("#login").css("background-color", "#e74c3c");
+          $("#login > span").css("color", "white");
+          $("#l-f").toggle(1000);
+          $("#r-f").toggle(500);
+        })
+      });
+</script>
+
+    <header>
+        <h1>Banco de Agricultura Salvadoreño S.A. de C.V.</h1>
+            <h3>Portal web, Bienvenido!</h3>
+    </header>
+
+    <div class="lr-wrapper" align="center">
+          <div class="lr-content">
+                <div class="lr-head">
+                  <div class="lr-l_b" id="login" onClick>
+                    <div></div>
+                    <span>Iniciar Sesion</span>
+                  </div>
+                  <div class="lr-r_b" id="register">
+                    <div></div>
+                    <span>Registrarse</span>
+                  </div>
+                </div>
+                <div class="lr-main">
+                  <form method="POST" id="l-f" action="../php/login.php">
+                    <input type="text" name="email" class="l-username" placeholder="Correo"/>
+                    <input type="password" name="password" class="l-password" placeholder="Contraseña"/>
+                    <input type="submit" name="l-submit" class="l-submit" value="Iniciar Sesion"/>
+                  </form>
+                  <form method="post" id="r-f" action="../php/sign-up.php">
+                    
+                    <input type="email" class="r-email" name="r-email" placeholder="Correo"/>
+                    <input type="text" name="dui" class="r-username" placeholder="DUI"/>
+                    <input type="text" name="nombre" class="r-username" placeholder="Nombre"/>
+                    <input type="text" name="apellido" class="r-username" placeholder="Apellido"/>
+                    <input type="date" name="fechanac" class="r-username" />
+                    <input type="password" name="password" class="r-username" placeholder="Contraseña"/>
+                    <input type="submit" name="submit" class="r-submit" value="Resgistrarme"/>
+                  </form>
+                </div>
+              </div>
+            </div>
+</body>
+</html>
