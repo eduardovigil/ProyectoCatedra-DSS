@@ -28,28 +28,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 header('Location: ../html/GerenteSucursal.php');
                 break;
             case 4:
-                header('Location: cajero.php');
+                header('Location: ../html/cajero.php');
                 break;
             case 24:
-                header('Location: GerenteGeneral.php');
+                header('Location: ../html/GerenteGeneral.php');
                 break;
             case 34:
-                header('Location: Cliente.php');
+                header('Location: ../html/Cliente.php');
                 break;
             case 44:
-                header('Location: Dependiente.php');
+                header('Location: ../html/Dependiente.php');
                 break;
             case 54:
-                header('Location: PersonalLimpieza.php');
+                header('Location: ../html/PersonalLimpieza.php');
                 break;
             case 64:
-                header('Location: PersonalMesa.php');
+                header('Location: ../html/PersonalMesa.php');
             break;
             case 74:
-                header('Location: Secretaria.php');
+                header('Location: ../html/Secretaria.php');
                 break;
             case 84:
-                header('Location:PersonalSeguridad.php');
+                header('Location: ../html/PersonalSeguridad.php');
                 break;
             default:
                 echo " No existe rol";
