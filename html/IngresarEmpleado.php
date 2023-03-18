@@ -8,6 +8,8 @@
     <title>Ingresar nuevo empleado</title>
 </head>
 <body>
+<?php include('menu.php') ?>
+
   <h1>Ingresar nuevo empleado</h1>
   
 <div class="form">

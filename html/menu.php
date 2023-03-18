@@ -14,6 +14,9 @@
 <nav class='barNav'>
             <ul class='barNavegacion' id='nav'>
             <li class='bar-item'>
+              <span class='link-text'><a href="../html/GerenteSucursal.php">Inicio</a></span>
+            </li>
+            <li class='bar-item'>
               <span class='link-text'><a href="../html/IngresarEmpleado.php">Ingresar empleado</a></span>
             </li>
             
@@ -23,7 +26,7 @@
                 </li>
 
                 <li class='bar-item' id='li-cita' title='Aceptacion de Personal'>
-                    <span class='link-text'><a href="V../html/AceptacionP.php">Ver Prestamos de cajero</a></span>
+                    <span class='link-text'><a href="../html/darDePrestamo.php">Ver Prestamos de cajero</a></span>
                   </a>
                 </li>
 
