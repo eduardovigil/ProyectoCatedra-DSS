@@ -35,12 +35,13 @@
         <h1>Banco de Agricultura Salvadoreño S.A. de C.V.</h1>
             <h3>Portal web, Bienvenido!</h3>
     </header>
-
     <div class="lr-wrapper" align="center">
           <div class="lr-content">
                 <div class="lr-head">
                   <div class="lr-l_b" id="login" onClick>
-                    <div></div>
+                    <div><?php if (isset($error)) { ?>
+                  <p><?php echo $error; ?></p>
+                  <?php } ?></div>
                     <span>Iniciar Sesion</span>
                   </div>
                   <div class="lr-r_b" id="register">
@@ -54,15 +55,14 @@
                     <input type="password" name="password" class="l-password" placeholder="Contraseña"/>
                     <input type="submit" name="l-submit" class="l-submit" value="Iniciar Sesion"/>
                   </form>
-                  <form method="post" id="r-f" action="../php/sign-up.php">
-                    
+                  <form method="POST" id="r-f" action="../php/sign-up.php">
                     <input type="email" class="r-email" name="email" placeholder="Correo"/>
                     <input type="text" name="dui" class="r-username" placeholder="DUI"/>
                     <input type="text" name="nombre" class="r-username" placeholder="Nombre"/>
                     <input type="text" name="apellido" class="r-username" placeholder="Apellido"/>
                     <input type="date" name="fechanac" class="r-username" />
                     <input type="password" name="password" class="r-username" placeholder="Contraseña"/>
-                    <input type="submit" name="submit" class="r-submit" value="Resgistrarme"/>
+                    <input type="submit" name="submit" class="r-submit" value="Registrarme"/>
                   </form>
                 </div>
               </div>
