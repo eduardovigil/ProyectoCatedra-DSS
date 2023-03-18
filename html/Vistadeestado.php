@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< Updated upstream
+=======
+<link rel="stylesheet" href="../css/estado.css">
+>>>>>>> Stashed changes
 	<title>Listado de registros</title>
 </head>
 <body>
