@@ -59,8 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     } else {
         // Mostrar un mensaje de error
-        echo "<script>alert('Error los datos son distintos')</script>";
-        header('Location: ../html/login.html');
+        $error = "Error los datos son distintos";
+        header('Location: ../html/iniciosesion.php');
         
     }
 
